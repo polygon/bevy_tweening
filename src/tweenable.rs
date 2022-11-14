@@ -1014,7 +1014,7 @@ impl<T> Delay<T> {
     pub fn new(duration: Duration) -> Self {
         assert!(!duration.is_zero());
         Self {
-            timer: Timer::new(duration, false),
+            timer: Timer::new(duration, TimerMode::Once),
             on_completed: None,
             event_data: None,
         }
